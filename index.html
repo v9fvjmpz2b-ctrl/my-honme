@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#dbeafe">
+<title>小蓝运动日记 · 个人主页</title>
+<style>
+  :root {
+    --bg: #eaf3fd;
+    --bg2: #f6faff;
+    --card: rgba(255,255,255,.78);
+    --text: #27415f;
+    --muted: #7b93b0;
+    --primary: #5b9bef;
+    --primary-soft: #dcebff;
+    --line: #d6e6f8;
+    --shadow: 0 8px 24px rgba(91,155,239,.15);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  body {
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    color: var(--text);
+    background: linear-gradient(180deg, #cfe3fb 0%, var(--bg) 260px, var(--bg2) 100%) fixed;
+    padding: 0 16px calc(32px + env(safe-area-inset-bottom));
+    line-height: 1.6;
+  }
+  .wrap { max-width: 480px; margin: 0 auto; }
+
+  /* 头部 */
+  .hero { text-align: center; padding: calc(44px + env(safe-area-inset-top)) 0 8px; position: relative; }
+  .avatar {
+    width: 112px; height: 112px; border-radius: 50%;
+    border: 4px solid #fff; box-shadow: var(--shadow);
+    object-fit: cover; background: var(--primary-soft);
+    display: block; margin: 0 auto 14px;
+  }
+  h1 { font-size: 22px; letter-spacing: .5px; }
+  .id { color: var(--muted); font-size: 13px; margin-top: 2px; }
+  .tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 14px; }
+  .tag {
+    font-size: 12px; padding: 4px 12px; border-radius: 99px;
+    background: #fff; color: var(--primary); border: 1px solid var(--line);
+  }
+  .stats { display: flex; margin-top: 20px; background: var(--card); border-radius: 18px; box-shadow: var(--shadow); padding: 14px 0; backdrop-filter: blur(8px); }
+  .stats div { flex: 1; text-align: center; }
+  .stats div + div { border-left: 1px solid var(--line); }
+  .stats b { display: block; font-size: 18px; color: var(--primary); }
+  .stats span { font-size: 12px; color: var(--muted); }
+
+  /* 卡片 */
+  section { margin-top: 22px; }
+  h2 { font-size: 15px; margin: 0 4px 10px; display: flex; align-items: center; gap: 8px; }
+  h2::before { content: ""; width: 4px; height: 15px; border-radius: 2px; background: var(--primary); }
+  .card { background: var(--card); border-radius: 18px; padding: 16px; box-shadow: var(--shadow); backdrop-filter: blur(8px); }
+  .card p { font-size: 14px; }
+  .card p + p { margin-top: 8px; }
+
+  /* 作品 */
+  .works { display: grid; gap: 12px; }
+  .work {
+    display: flex; gap: 12px; text-decoration: none; color: inherit;
+    background: var(--card); border-radius: 18px; padding: 10px;
+    box-shadow: var(--shadow); transition: transform .15s;
+  }
+  .work:active { transform: scale(.98); }
+  .cover {
+    flex: 0 0 120px; height: 76px; border-radius: 12px; position: relative; overflow: hidden;
+    background: linear-gradient(135deg, #a9cdfa, #7fb2f3);
+    display: flex; align-items: center; justify-content: center; font-size: 30px;
+  }
+  .cover img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .cover i {
+    position: absolute; right: 5px; bottom: 5px; font-style: normal; font-size: 10px;
+    color: #fff; background: rgba(39,65,95,.55); padding: 0 6px; border-radius: 8px;
+  }
+  .info { min-width: 0; display: flex; flex-direction: column; justify-content: space-between; }
+  .info h3 { font-size: 14px; font-weight: 600; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .info small { color: var(--muted); font-size: 12px; }
+
+  /* 按钮 */
+  .btn {
+    display: block; text-align: center; text-decoration: none; margin-top: 16px;
+    background: linear-gradient(135deg, #7fb2f3, var(--primary)); color: #fff;
+    padding: 13px; border-radius: 99px; font-size: 15px; font-weight: 600;
+    box-shadow: 0 8px 20px rgba(91,155,239,.35);
+  }
+  .btn:active { opacity: .9; }
+  footer { text-align: center; color: var(--muted); font-size: 12px; margin-top: 26px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <!-- 换成你的头像：把图片放在仓库里，改成 src="avatar.jpg" -->
+    <img class="avatar" alt="头像"
+      src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 112 112'><rect width='112' height='112' fill='%23dcebff'/><circle cx='56' cy='44' r='20' fill='%235b9bef'/><path d='M16 112c4-26 20-36 40-36s36 10 40 36z' fill='%235b9bef'/></svg>">
+    <h1>小蓝运动日记</h1>
+    <p class="id">UID：12345678</p>
+    <div class="tags">
+      <span class="tag">🏃 跑步</span>
+      <span class="tag">💪 居家健身</span>
+      <span class="tag">🧘 拉伸放松</span>
+    </div>
+    <div class="stats">
+      <div><b>12.3万</b><span>粉丝</span></div>
+      <div><b>186</b><span>投稿</span></div>
+      <div><b>320万</b><span>播放</span></div>
+    </div>
+  </header>
+
+  <section>
+    <h2>关于我</h2>
+    <div class="card">
+      <p>你好呀，我是小蓝 👋 一个从体测都跑不完的新手，慢慢变成每周都想动一动的人。</p>
+      <p>在这里分享温柔、可坚持的运动方式：跑步入门、居家训练、拉伸恢复。动起来，比完美更重要～</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>精选作品</h2>
+    <div class="works">
+      <!-- 复制整个 <a> 块即可新增作品；href 换成视频链接，封面可加 <img src="..."> -->
+      <a class="work" href="https://www.bilibili.com/video/BV1xxxxxxxxx" target="_blank" rel="noopener">
+        <div class="cover">🏃<i>12:34</i></div>
+        <div class="info"><h3>零基础跑步入门｜30天从500米到5公里</h3><small>▶ 52.1万 · 2025-08-12</small></div>
+      </a>
+      <a class="work" href="https://www.bilibili.com/video/BV1xxxxxxxxx" target="_blank" rel="noopener">
+        <div class="cover">💪<i>18:20</i></div>
+        <div class="info"><h3>每天15分钟居家燃脂｜无跳跃不扰民</h3><small>▶ 38.6万 · 2025-06-03</small></div>
+      </a>
+      <a class="work" href="https://www.bilibili.com/video/BV1xxxxxxxxx" target="_blank" rel="noopener">
+        <div class="cover">🧘<i>10:05</i></div>
+        <div class="info"><h3>睡前10分钟拉伸｜放松肩颈和腰背</h3><small>▶ 25.4万 · 2025-04-21</small></div>
+      </a>
+    </div>
+    <a class="btn" href="https://space.bilibili.com/12345678" target="_blank" rel="noopener">去 B 站关注我 💙</a>
+  </section>
+
+  <footer>© 小蓝运动日记 · 一起慢慢变强</footer>
+</div>
+</body>
+</html>
